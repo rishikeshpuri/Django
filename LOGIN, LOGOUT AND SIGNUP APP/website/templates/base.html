@@ -1,0 +1,38 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/basestyles.css' %}">
+
+    <title>Rishikesh's Articles can be found here</title>
+  </head>
+  <body>
+
+
+    <header>
+      <h1><a href="/">My personal blog</a></h1>
+    </header>
+
+    <div class="container">
+
+
+      {% if user.is_authenticated %}
+      <p>you are loged in</p>
+      <p>Hey there: {{ user.username }},Howdy </p>
+      <p>Please <a href="{% url 'logout' %}">Logout</a>here</p>
+
+      {% else %}
+      <p>You are not loged in</p>
+      <p>Please <a href="{% url 'login' %}">Login</a>here</p>
+      {% endif %}
+      {% block content %}
+      {% endblock content %}
+
+
+
+    </div>
+
+  </body>
+</html>

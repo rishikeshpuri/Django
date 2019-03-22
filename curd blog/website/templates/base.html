@@ -1,0 +1,30 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/basestyles.css' %}">
+
+    <title>Rishikesh's Articles can be found here</title>
+  </head>
+  <body>
+
+
+    <header>
+      <h1><a href="/">My personal blog</a></h1>
+    </header>
+    <div class="new">
+      <h3><a href="{% url 'new_article' %}">Add new Article</a></h3>
+    </div>
+
+    <div class="container">
+
+      {% block content %}
+      {% endblock content %}
+
+
+    </div>
+
+  </body>
+</html>
